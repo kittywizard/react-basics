@@ -1,9 +1,12 @@
+import Header from "./Header";
+import Footer from "./Footer";
 
 function App() {
     return (
         <div>
+            <Header />
             <h1>hello world</h1>
-            <p>this is me</p>
+            <Footer />
         </div>
     )
 }

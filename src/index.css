@@ -2,3 +2,7 @@ body {
     font-family: sans-serif;
     color: coral;
 }
+
+li {
+    list-style-type: none;
+}
