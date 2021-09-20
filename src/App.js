@@ -1,11 +1,12 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import Joke from "./Joke";
 
 function App() {
     return (
         <div>
             <Header />
-            <h1>hello world</h1>
+            <Joke />
             <Footer />
         </div>
     )
