@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useRef, useState} from "react"
 
 function App() {
 
@@ -10,6 +10,8 @@ function App() {
   const [countdown, setCountdown] = useState(startingTime);
   const [startTimer, setStartTimer] = useState(false);
   const [wordCount, setWordCount] = useState(0);
+
+  const inputRef = useRef(null);
 
   useEffect(() => {
     if(startTimer){
@@ -50,6 +52,7 @@ function App() {
             name="textarea"
             value={textarea}
             disabled={!startTimer}
+            ref={inputRef}
         />
 
         <h4>Time Remaining: {countdown}</h4>
@@ -58,8 +61,11 @@ function App() {
           onClick={() => {
             countdown === 0 && resetGame()
             setStartTimer(prevState => (!prevState))
+            inputRef.current.disabled = false; //probably not a great bug fix
+            inputRef.current.focus();
           }}
           disabled={startTimer}
+
         >
           Start Game
         </button>
