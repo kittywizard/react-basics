@@ -5,6 +5,7 @@ function Products() {
     const productMap = productsData.map(product => (
         <Product 
             key={product.id}
+            id={product.id}
             name={product.name}
             desc={product.description}
             price={product.price}
